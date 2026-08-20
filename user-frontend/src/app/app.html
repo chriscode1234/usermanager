@@ -1,0 +1,61 @@
+<video autoplay muted loop playsinline class="bg-video" #bgVideo>
+  <source src="animated_background.mp4" type="video/mp4" />
+</video>
+
+
+
+<div class="container">
+  <h1>User Manager</h1>
+
+  <p class="message" [class]="messageType" *ngIf="message">{{ message }}</p>
+
+
+  <div class="card">
+    <h2>Add a user</h2>
+    <form (submit)="saveUser()">
+      <input [(ngModel)]="newUser.firstName" name="firstName" placeholder="First name" required />
+      <input [(ngModel)]="newUser.lastName" name="lastName" placeholder="Last name" required />
+      <input [(ngModel)]="newUser.age" name="age" type="number" placeholder="Age" required />
+      <input [(ngModel)]="newUser.salary" name="salary" type="number" placeholder="Salary" required />
+      <input [(ngModel)]="newUser.email" name="email" placeholder="Email" required />
+      <input [(ngModel)]="newUser.department" name="department" placeholder="Department" required />
+      <button type="submit" class="primary">Add</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>All users</h2>
+    <button class="refresh" (click)="loadUsers()">Refresh List</button>
+
+    <input [(ngModel)]="searchText" name="search" placeholder="Search by name..." />
+    <p>Total users: {{ filteredUsers.length }}</p>
+
+
+    <table *ngIf="filteredUsers.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th><th>First</th><th>Last</th><th>Age</th><th>Salary</th><th>Email</th><th>Department</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of filteredUsers">
+          <td>{{ user.id }}</td>
+          <td>{{ user.firstName }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.age }}</td>
+          <td>{{ user.salary }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.department }}</td>
+          <td>
+            <button (click)="editUser(user)">Edit</button>
+            <button class="danger" (click)="deleteUser(user.id!)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p *ngIf="filteredUsers.length === 0">No users yet. Add one above.</p>
+  </div>
+  <footer class = "footer">
+    <p>Built by Chris Martinez, apprentice at Nationwide Insurance</p>
+  </footer>
+</div>

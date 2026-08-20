@@ -1,0 +1,80 @@
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1a1a2e;
+}
+
+
+h1 {
+    text-align: center;
+    color: lightsteelblue;
+    font-family: 'Lilita One', sans-serif;
+}
+
+
+
+.message {
+    background: #e6f0ff;
+    border-left: 4px solid #0b3d91;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #e0e0e0;
+    font-weight: 500;
+    margin-right: 6px;
+}
+
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+button.primary { background: #0b3d91; color: white; }
+button.danger { background: #c0392b; color: white; }
+button.refresh { margin-bottom: 12px; background: #0b3d91; color: white; }
+button:hover { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3)}
+
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px; text-align: left; border-bottom: 1px solid #eee;}
+th { background: #f5f7fa}
+
+.footer {
+    text-align: center;
+    padding: 16px;
+    margin-top: 24px;
+    color: white;
+    font-size: 14px;
+    border-top: 1px solid #e0e0e0
+}
